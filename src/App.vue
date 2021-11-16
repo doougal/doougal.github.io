@@ -5,10 +5,24 @@
 
       <h1>Alex Burling</h1>
       <p>System Developer @ Gaia Healthcare NZ</p>
-      <p>BSC Computer Science @ University of Canterbury</p>
+      <p>BSc Computer Science @ University of Canterbury</p>
     </header>
 
     <div id="links">
+      <div class="link">
+        <Icon icon="clarity:phone-handset-solid" /> Contact
+        <div class="arrows" v-on:click="clicked('contact')">
+          <Icon icon="akar-icons:chevron-down" v-if="!isClicked.contact" />
+          <Icon icon="akar-icons:chevron-up" v-if="isClicked.contact" />
+        </div>
+
+        <div v-show="isClicked.contact">
+          <p>+64 021 084 57732</p>
+          <a href="mailto:burling_alex@yahoo.com">burling_alex@yahoo.com</a>
+          <p>Christchurch, New Zealand</p>
+        </div>
+      </div>
+
       <a
         class="link"
         href="https://github.com/doougal"
@@ -16,6 +30,7 @@
         rel="noopener"
         ><Icon icon="akar-icons:github-fill" /> GitHub</a
       >
+
       <a
         class="link"
         href="https://www.linkedin.com/in/alex-burling/"
@@ -23,27 +38,41 @@
         rel="noopener"
         ><Icon icon="akar-icons:linkedin-fill" /> LinkedIn</a
       >
-      <a
-        class="link"
-        href="https://app.hackthebox.eu/users/779571"
-        target="_blank"
-        rel="noopener"
-        ><Icon icon="simple-icons:hackthebox" /> HackTheBox</a
-      >
-      <a
-        class="link"
-        href="https://tryhackme.com/p/doog"
-        target="_blank"
-        rel="noopener"
-        ><Icon icon="simple-icons:tryhackme" /> TryHackMe</a
-      >
-      <a
-        class="link"
-        href="https://www.hackerrank.com/burling_alex"
-        target="_blank"
-        rel="noopener"
-        ><Icon icon="fa-brands:hackerrank" /> HackerRank</a
-      >
+
+      <div class="link">
+        <div :class="{ active: isClicked.cybersec }">
+          <Icon icon="simple-icons:hackthebox" /> Cyber Security
+          <div class="arrows" v-on:click="clicked('cybersec')">
+            <Icon icon="akar-icons:chevron-down" v-if="!isClicked.cybersec" />
+            <Icon icon="akar-icons:chevron-up" v-if="isClicked.cybersec" />
+          </div>
+        </div>
+        <div v-if="isClicked.cybersec">
+          <a
+            class="link sublink"
+            href="https://app.hackthebox.eu/users/779571"
+            target="_blank"
+            rel="noopener"
+            ><Icon icon="simple-icons:hackthebox" /> HackTheBox</a
+          >
+
+          <a
+            class="link sublink"
+            href="https://tryhackme.com/p/doog"
+            target="_blank"
+            rel="noopener"
+            ><Icon icon="simple-icons:tryhackme" /> TryHackMe</a
+          >
+
+          <a
+            class="link sublink"
+            href="https://www.hackerrank.com/burling_alex"
+            target="_blank"
+            rel="noopener"
+            ><Icon icon="fa-brands:hackerrank" /> HackerRank</a
+          >
+        </div>
+      </div>
     </div>
 
     <footer>
@@ -66,6 +95,16 @@ export default {
   components: {
     Icon,
   },
+  data() {
+    return {
+      isClicked: { contact: false, cybersec: false },
+    };
+  },
+  methods: {
+    clicked(link) {
+      this.isClicked[link] = this.isClicked[link] ? false : true;
+    },
+  },
 };
 </script>
 
@@ -85,6 +124,7 @@ export default {
   text-align: center;
   color: var(--color);
   margin-top: 30px;
+  user-select: none;
 }
 
 body {
@@ -97,6 +137,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 #profilePhoto {
@@ -126,6 +167,11 @@ body {
   text-align: center;
   text-decoration: none;
   color: var(--color);
+  min-width: 250px;
+}
+
+.sublink {
+  min-width: 200px;
 }
 
 #footerLink {
@@ -137,5 +183,18 @@ body {
   text-align: center;
   text-decoration: none;
   color: var(--color);
+}
+
+.arrows {
+  float: right;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.active {
+  margin-bottom: 20px;
 }
 </style>
