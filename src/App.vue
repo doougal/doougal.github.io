@@ -4,8 +4,8 @@
       <img id="profilePhoto" alt="Profile Photo" src="./assets/profile.png" />
 
       <h1>Alex Burling</h1>
+      <p>Associate DevOps Engineer @ MYOB</p>
       <p>System Developer @ Gaia Healthcare NZ</p>
-      <p>BSc Computer Science @ University of Canterbury</p>
     </header>
 
     <div id="links">
@@ -39,7 +39,7 @@
         ><Icon icon="akar-icons:linkedin-fill" /> LinkedIn</a
       >
 
-      <div class="link">
+      <!-- <div class="link">
         <div :class="{ active: isClicked.cybersec }">
           <Icon icon="simple-icons:hackthebox" /> Cyber Security
           <div class="arrows" v-on:click="clicked('cybersec')">
@@ -72,7 +72,7 @@
             ><Icon icon="fa-brands:hackerrank" /> HackerRank</a
           >
         </div>
-      </div>
+      </div> -->
     </div>
 
     <footer>
