@@ -18,7 +18,7 @@
 
         <div v-show="isClicked.contact">
           <p>+64 021 084 57732</p>
-          <a href="mailto:burling_alex@yahoo.com">burling_alex@yahoo.com</a>
+          <a href="mailto:alex@burling.nz">alex@burling.nz</a>
           <p>Christchurch, New Zealand</p>
         </div>
       </div>
