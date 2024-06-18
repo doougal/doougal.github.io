@@ -6,8 +6,7 @@
       <h1>Alex Burling</h1>
       <p>Co-founder @ BananaToaster</p>
       <p>DevOps Engineer @ MYOB</p>
-      <p>Full Stack Developer / Systems Engineer @ Gaia Healthcare NZ</p>
-      <hr style="width: 50%;border-color: var(--color)"/>
+      <hr style="width: 40%;border-color: var(--color)"/>
       <p>AWS Certified Cloud Practitioner</p>
       <p>Master of Applied Computing</p>
       <p>Bachelor of Science in Computer Science</p>
