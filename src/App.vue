@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <img id="profilePhoto" alt="Profile Photo" src="./assets/headshot-circle.png" />
+      <img id="profilePhoto" alt="Profile Photo" src="./assets/headshot-2025.jpg" />
 
       <h1>Alex Burling</h1>
       <p>Co-founder @ BananaToaster</p>
